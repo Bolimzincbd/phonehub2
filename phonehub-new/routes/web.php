@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 
 // Public pages
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/search', [PhoneController::class, 'search']);
 Route::get('/phone/{id}', [PhoneController::class, 'show']);
 
 // Compare

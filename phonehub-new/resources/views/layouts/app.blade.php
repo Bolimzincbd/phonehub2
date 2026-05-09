@@ -19,12 +19,18 @@
         .alert-good { background-color: lightgreen; padding: 10px; border: 1px solid green; margin-bottom: 15px; }
         .alert-bad { background-color: pink; padding: 10px; border: 1px solid red; margin-bottom: 15px; }
         .bottom-footer { background-color: #e0e0e0; padding: 20px; text-align: center; border-top: 2px solid gray; margin-top: 20px; }
+        
+        /* New CSS for Search Page Layout */
+        .search-container { display: flex; gap: 20px; }
+        .search-sidebar { width: 250px; background-color: #f9f9f9; padding: 15px; border: 1px solid gray; }
+        .search-main { flex: 1; }
     </style>
 </head>
 <body>
 
     <div class="top-menu">
         <a href="/">Home Page</a>
+        <a href="/search">Search Filter</a>
         <a href="/compare">Compare Phone</a>
         <a href="/blog">Read Blog</a>
         
@@ -56,10 +62,9 @@
 
     <div class="bottom-footer">
         <h3>PhoneHub Compare Website</h3>
-        <p>This website make by us to help you look phones and compare. We try find best money worth product for you to buy.</p>
-        <p>If the website have error, please do not be angry. We will try to fix it later.</p>
-        <p>Also if you have any questions please do not contact us, Because we dont have any contact rn</p>
-        <p><small>All phone picture and specs belong to real brand company. We dont copyright. We just download to used for this school project Thank you very much for visit today.</small></p>
+        <p>This website make by us to help you look phone easy. We try find best money price for you buy.</p>
+        <p>If website have error, please do not angry. We try fix it later.</p>
+        <p><small>All phone picture and specs belong to real brand company. We no copy right. Thank you very much for visit today.</small></p>
     </div>
 
 </body>
