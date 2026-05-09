@@ -6,7 +6,7 @@
     <p>You can put 3 phone here to look specs.</p>
 
     @if(count($phones) == 0)
-        <p>No phone inside compare right now. Go home to add.</p>
+        <p>No phone inside compare right now. Go Home page to add.</p>
     @else
         <table>
             <tr>
