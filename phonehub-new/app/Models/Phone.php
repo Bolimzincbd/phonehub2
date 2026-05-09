@@ -11,17 +11,13 @@ class Phone extends Model
 
     protected $table = 'phones';
 
-    // Technical database words keep same
     protected $fillable = [
-        'name',
-        'brand',
-        'price',
-        'storage',
-        'ram',
-        'camera',
-        'battery',
-        'screen_size',
-        'description',
-        'image_url'
+        'name', 'brand', 'price', 'storage', 'ram', 'os', 'camera', 'battery', 
+        'screen_size', 'processor', 'description', 'image_url', 'status'
     ];
+
+    public function storePrices()
+    {
+        return $this->hasMany(StorePrice::class, 'phone_id');
+    }
 }

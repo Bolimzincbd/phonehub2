@@ -15,11 +15,14 @@ return new class extends Migration
             $table->decimal('price', 8, 2)->nullable();
             $table->string('storage')->nullable();
             $table->string('ram')->nullable();
+            $table->string('os')->nullable();
             $table->string('camera')->nullable();
             $table->string('battery')->nullable();
             $table->string('screen_size')->nullable();
+            $table->string('processor')->nullable();
             $table->text('description')->nullable();
             $table->string('image_url')->nullable();
+            $table->string('status')->default('Normal'); // Latest, Recommended, Upcoming, Normal
             $table->timestamps();
         });
     }

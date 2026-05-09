@@ -2,40 +2,39 @@
 
 @section('content')
 
-    <h2>All Phone We Have Here</h2>
-    <p>Welcome to website. We have many good phone. You look table below to see phone and price money.</p>
+    <h2>Welcome to Phone Website</h2>
+    <p>We show many good phone for you. You can see price and compare.</p>
 
-    <form method="GET" action="/">
-        <label>Search Phone:</label>
-        <input type="text" name="search" placeholder="type phone name...">
-        <button type="submit">Search Now</button>
-    </form>
-
-    <table>
-        <tr>
-            <th>Picture</th>
-            <th>Phone Name</th>
-            <th>Brand</th>
-            <th>Money Price</th>
-            <th>Action Click</th>
-        </tr>
-        
-        @foreach($phones as $phone)
-        <tr>
-            <td>
-                <img src="{{ asset('images/' . $phone->image_url) }}" alt="phone image" width="80">
-            </td>
-            <td>{{ $phone->name }}</td>
-            <td>{{ $phone->brand }}</td>
-            <td>${{ $phone->price }}</td>
-            <td>
-                <a href="/phone/{{ $phone->id }}">
-                    <button>Look Detail</button>
-                </a>
-            </td>
-        </tr>
+    <hr>
+    <h3>Latest Phone</h3>
+    <div class="card-box">
+        @foreach($latestPhones as $phone)
+            @include('partials.phone_card', ['phone' => $phone])
         @endforeach
+    </div>
 
-    </table>
+    <hr>
+    <h3>Recommended Phone</h3>
+    <div class="card-box">
+        @foreach($recommendPhones as $phone)
+            @include('partials.phone_card', ['phone' => $phone])
+        @endforeach
+    </div>
+
+    <hr>
+    <h3>Upcoming Phone</h3>
+    <div class="card-box">
+        @foreach($upcomingPhones as $phone)
+            @include('partials.phone_card', ['phone' => $phone])
+        @endforeach
+    </div>
+
+    <hr>
+    <h3>Other Normal Phone</h3>
+    <div class="card-box">
+        @foreach($normalPhones as $phone)
+            @include('partials.phone_card', ['phone' => $phone])
+        @endforeach
+    </div>
 
 @endsection
