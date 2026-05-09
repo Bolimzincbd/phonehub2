@@ -20,7 +20,7 @@ Here is the complete `README.md` file. You can put this file in your project fol
 
 ### `README.md`
 
-```markdown
+markdown
 # PhoneHub Website Project
 
 This is simple phone compare website build with Laravel framework. User can look phone, see price compare, read blog news, and admin can add more data and image.
@@ -32,12 +32,12 @@ If you want to run this project, you friend must have **PHP**, **Composer**, and
 ### Step 1: Open Terminal and Install Package
 First time you get this project folder, you must go inside the `phonehub-new` folder. Open terminal and type this command to install all technical files:
 
-```bash
+```
 cd phonehub-new
 composer install
 npm install
-
 ```
+
 
 ### Step 2: Make Environment Config File
 
