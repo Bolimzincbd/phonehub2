@@ -13,7 +13,7 @@
                 <th>Specs Name</th>
                 @foreach($phones as $phone)
                     <th>
-                        <img src="{{ asset('images/' . $phone->image_url) }}" width="100"><br>
+                        <img src="{{ asset('images/phones/' . $phone->image_url) }}" width="100"><br>
                         {{ $phone->name }}
                         <form action="/compare/remove/{{ $phone->id }}" method="POST" style="margin-top:5px;">
                             @csrf

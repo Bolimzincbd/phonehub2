@@ -6,7 +6,7 @@
 
     <div style="display: flex; gap: 20px;">
         <div>
-            <img src="{{ asset('images/' . $phone->image_url) }}" alt="image" width="250" style="border: 1px solid black;">
+            <img src="{{ asset('images/phones/' . $phone->image_url) }}" alt="image" width="250" style="border: 1px solid black;">
         </div>
         <div>
             <h3>Specs Information</h3>
@@ -46,7 +46,7 @@
         <tr>
             <td>{{ $storePrice->store->name }}</td>
             <td>${{ $storePrice->price }}</td>
-            <td>{{ $storePrice->link }}</td>
+            <td><a href="{{ $storePrice->link }}" target="_blank">Go Buy Here</a></td>
             <td>{{ $storePrice->updated_at->format('Y-m-d') }}</td>
         </tr>
         @endforeach

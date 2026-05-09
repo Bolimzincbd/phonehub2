@@ -1,5 +1,5 @@
 <div class="card">
-    <img src="{{ asset('images/' . $phone->image_url) }}" alt="phone picture">
+    <img src="{{ asset('images/phones/' . $phone->image_url) }}" alt="phone picture" style="width:100%; height:auto;">
     <h4>{{ $phone->name }}</h4>
     <p><strong>Brand:</strong> {{ $phone->brand }}</p>
     <p><strong>Main Price:</strong> ${{ $phone->price }}</p>

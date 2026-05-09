@@ -3,23 +3,26 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Phone;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        Phone::create([
-            'name' => 'iPhone 13 Pro',
-            'brand' => 'Apple',
-            'price' => 999.00,
-            'storage' => '256GB',
-            'ram' => '6GB',
-            'camera' => '12MP',
-            'battery' => '3095 mAh',
-            'screen_size' => '6.1 inches',
-            'description' => 'A very fast phone with a good camera.',
-            'image_url' => 'apple-iphone-13-pro.jpg' // Make sure this image is in public/images/
+        // Create Admin Boss so you can go to dashboard
+        User::create([
+            'name' => 'Admin Boss',
+            'email' => 'admin@test.com',
+            'password' => Hash::make('123456'),
+            'role' => 'admin'
+        ]);
+
+        // Run the other seed files
+        $this->call([
+            PhoneSeeder::class,
+            StoreSeeder::class,
+            StorePriceSeeder::class,
         ]);
     }
 }
