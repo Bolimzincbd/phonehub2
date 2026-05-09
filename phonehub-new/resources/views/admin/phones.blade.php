@@ -6,7 +6,7 @@
     <hr>
 
     <h3>Add New Phone</h3>
-    <form action="/admin/phones/add" method="POST">
+    <form action="/admin/phones/add" method="POST" enctype="multipart/form-data">
         @csrf
         Name: <input type="text" name="name" required>
         Brand: <input type="text" name="brand">
@@ -19,7 +19,9 @@
         Battery: <input type="text" name="battery">
         Screen Size: <input type="text" name="screen_size">
         Description: <textarea name="description"></textarea>
-        Image File Name: <input type="text" name="image_url">
+        
+        Upload Image Picture: <input type="file" name="image_file" accept="image/*">
+        
         Status: 
         <select name="status">
             <option value="Normal">Normal</option>

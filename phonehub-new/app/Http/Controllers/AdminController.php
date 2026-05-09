@@ -34,7 +34,17 @@ class AdminController
     public function addPhone(Request $request)
     {
         $this->checkAdmin();
-        Phone::create($request->all());
+        $data = $request->all();
+
+        // Handle image file upload
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images/phones'), $imageName);
+            $data['image_url'] = $imageName;
+        }
+
+        Phone::create($data);
         return back()->with('success', 'Phone add success!');
     }
 
@@ -49,7 +59,17 @@ class AdminController
     {
         $this->checkAdmin();
         $phone = Phone::findOrFail($id);
-        $phone->update($request->all());
+        $data = $request->all();
+
+        // Handle new image file upload
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images/phones'), $imageName);
+            $data['image_url'] = $imageName;
+        }
+
+        $phone->update($data);
         return redirect('/admin/phones')->with('success', 'Phone update success!');
     }
 
@@ -132,7 +152,17 @@ class AdminController
     public function addBlog(Request $request)
     {
         $this->checkAdmin();
-        BlogPost::create($request->all());
+        $data = $request->all();
+
+        // Handle image file upload
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        BlogPost::create($data);
         return back()->with('success', 'Blog add success!');
     }
 
@@ -147,7 +177,17 @@ class AdminController
     {
         $this->checkAdmin();
         $blog = BlogPost::findOrFail($id);
-        $blog->update($request->all());
+        $data = $request->all();
+
+        // Handle new image file upload
+        if ($request->hasFile('image_file')) {
+            $image = $request->file('image_file');
+            $imageName = time() . '-' . $image->getClientOriginalName();
+            $image->move(public_path('images'), $imageName);
+            $data['image'] = $imageName;
+        }
+
+        $blog->update($data);
         return redirect('/admin/blogs')->with('success', 'Blog update success!');
     }
 

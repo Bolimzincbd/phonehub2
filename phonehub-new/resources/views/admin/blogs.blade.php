@@ -6,10 +6,12 @@
     <hr>
 
     <h3>Add New Post Blog</h3>
-    <form action="/admin/blogs/add" method="POST">
+    <form action="/admin/blogs/add" method="POST" enctype="multipart/form-data">
         @csrf
         Title Subject: <input type="text" name="title" required>
-        Image Name: <input type="text" name="image">
+        
+        Upload Blog Image: <input type="file" name="image_file" accept="image/*">
+        
         Short Describe: <textarea name="short_description"></textarea>
         Full Story Word: <textarea name="content" style="height:150px;"></textarea>
         <button type="submit">Save Publish Blog</button>
