@@ -7,10 +7,19 @@ use App\Models\Phone;
 
 class PhoneController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Get all phone from database
-        $phones = Phone::all();
+        // Make query builder for database
+        $query = Phone::query();
+
+        // If user type in search box, filter the database name and brand
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'like', '%' . $request->search . '%')
+                  ->orWhere('brand', 'like', '%' . $request->search . '%');
+        }
+
+        // Get phone from database after search filter
+        $phones = $query->get();
         return view('home', compact('phones'));
     }
 
