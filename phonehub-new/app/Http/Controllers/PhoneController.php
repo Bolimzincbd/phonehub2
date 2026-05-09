@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Phone;
 
-class PhoneController extends Controller
+class PhoneController
 {
     public function index(Request $request)
     {
