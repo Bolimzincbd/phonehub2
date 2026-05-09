@@ -1,26 +1,5 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
-Here is the complete `README.md` file. You can put this file in your project folder so your friend can read it and copy the terminal commands easily. The English is simple and easy to understand for beginner.
-
 ### `README.md`
 
-```markdown
 # PhoneHub Website Project
 
 This is simple phone compare website build with Laravel framework. User can look phone, see price compare, read blog news, and admin can add more data and image.
@@ -32,12 +11,12 @@ If you want to run this project, you friend must have **PHP**, **Composer**, and
 ### Step 1: Open Terminal and Install Package
 First time you get this project folder, you must go inside the `phonehub-new` folder. Open terminal and type this command to install all technical files:
 
-```bash
+```
 cd phonehub-new
 composer install
 npm install
-
 ```
+
 
 ### Step 2: Make Environment Config File
 
